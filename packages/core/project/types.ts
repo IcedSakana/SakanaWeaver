@@ -2,12 +2,15 @@
  * Core domain model — Project structure
  */
 
+import type { StyleProfile } from '../style/types';
+
 export interface Project {
   id: string;
   name: string;
   bpm: number;
   timeSignature: [number, number]; // e.g. [4, 4]
   key: MusicalKey;
+  style: StyleProfile;             // active style profile conditioning generation
   tracks: Track[];
   sections: ArrangementSection[];
   createdAt: Date;
